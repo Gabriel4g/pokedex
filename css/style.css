@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    background-image: url(https://tecmasters.com.br/wp-content/uploads/2022/04/Cards-Pokemon.jpg);
+    background-color: rgba(0, 0, 0, 0.6);
+	background-blend-mode: color;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    margin-top: 30px;
+    max-width: 100%;
+}
+
+span {
+    display: flex;
+    gap: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+#content-search {
+    display: flex;
+}
+
+input {
+    height: 4.5rem;
+    font-size: 1.7rem;
+    padding-left: 14px;
+    width: 30rem;
+    border: none;
+    border-left: 2px solid #000;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+#search {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    height: 4.5rem;
+    font-size: 2rem;
+    border: none;
+    width: 20rem;
+    background: #55bb3b;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    width: 93.4%;
+}
+
+.card-pokemons {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 10px;
+    width: 50rem;
+    background-image: url(https://images.unsplash.com/photo-1636611452283-f00b13853c1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80); 
+    background-color: rgba(0, 0, 0, 0.6);
+	background-blend-mode: color;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid;
+    border-radius: 10px;
+    color: #fff;
+    position: relative;
+}
+
+.card-pokemons h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    font-size: 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+#next {
+    position: absolute;
+    right: 10px;
+    top: 130px;
+}
+
+#prev {
+    position: absolute;
+    left: 10px;
+    top: 130px;
+}
+
+.card-pokemons img {
+    height: 120px;
+}
+
+
+#stats-pokemons {
+    background: #107b83;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    align-items: stretch;
+    font-size: 4rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.count-pokemon {
+    color: #fff;
+    font-size: 11rem;
+    position: absolute;
+    top: 0;
+    opacity: 0.2;
+}
+
+@media (max-width: 1280px) {
+    body {
+        height: 110vh;
+    }
+}
+
+@media (max-width: 768px) {
+    #content-search {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 89%;
+    }
+
+    .card-pokemons {
+        width: 95%;
+        max-height: 100%;
+    }
+
+    img {
+        margin-top: 5px;
+        max-height: 80%;
+    }
+
+    #search, input {
+        border-radius: 5px;
+        width: 100%;
+    }
+
+}
