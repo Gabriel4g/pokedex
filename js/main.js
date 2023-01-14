@@ -1,58 +1,51 @@
-const buttonSearch = document.querySelector("#search");
-const PokemonID = document.querySelector(".id");
-const pokemonHP = document.querySelector(".hp");
-const pokemonName = document.querySelector(".name");
-const imagePokemons = document.querySelector(".pokemons");
-const pokeInput = document.querySelector("#input");
-const nextButton = document.querySelector("#next");
-const prevButton = document.querySelector("#prev");
-const pokemonXP = document.querySelector(".xp");
-const pokemonHeight = document.querySelector(".height");
-const pokemonWeight = document.querySelector(".weight");
-const statsPoke = document.querySelectorAll("h2");
-const pokemonSpeed = document.querySelector(".speed");
+const buttonSearch = document.querySelector("#search-pokemon");
+const imagePokemons = document.querySelector(".image-pokemons");
+const pokeInput = document.querySelector("#input-pokemon");
+const nextButton = document.querySelector("#next-pokemon");
+const prevButton = document.querySelector("#prev-pokemon");
+const contentStatsPokemon = document.querySelector(".content-stats");
+const namePokemon = document.querySelector(".name-pokemon");
 
 async function getPokemons(pokemon) {
     const pokeAPI = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
 
-    if (pokeAPI.status == 200) {
-        const dados = await pokeAPI.json();
-        return dados;
+    if (pokeAPI.status === 200) {
+        const data = await pokeAPI.json();
+        return data;
     }
 }
 
 let nextAndPrev = 1
 
 async function renderPokemons(pokemon) {
-    const dados = await getPokemons(pokemon);
+    const data = await getPokemons(pokemon);
 
-    if (dados) {
-        dados.stats.forEach((el) => {
+    if(data) {
+        contentStatsPokemon.innerHTML = "";
+        namePokemon.textContent = data.name.toUpperCase();
+        const pokemonID = document.createElement("h1");
+        contentStatsPokemon.appendChild(pokemonID);
+        pokemonID.textContent = `ID: ${data.id}`;
+        pokemonID.classList.add("style-powers-pokemon");
 
-            pokemonName.innerHTML = dados.name.toUpperCase();
-            pokemonXP.innerHTML = dados.base_experience;
+        for(let statsPower of data.stats) {
+            const powerPokemons = document.createElement("h2");
+            powerPokemons.textContent = `${statsPower.stat.name}: ${statsPower.base_stat}`;
+            contentStatsPokemon.appendChild(powerPokemons);
+            powerPokemons.classList.add("style-powers-pokemon");
+        }
 
-            pokemonHP.innerHTML = el.base_stat
-            PokemonID.innerHTML = dados.id;
-            pokemonHeight.innerHTML = dados.height + " dm";
-            pokemonWeight.innerHTML = dados.weight + " hg";
-
-            console.log(el)
-        })
-
-        imagePokemons.src = dados['sprites']['versions']['generation-v']['black-white']['animated']
+        imagePokemons.src = data['sprites']['versions']['generation-v']['black-white']['animated']
         ['front_default'];
 
-        nextAndPrev = dados.id;
+        nextAndPrev = data.id;
     }
 
     else {
-        statsPoke.forEach((el) => {
-            el.innerHTML = "0"
-        })
+        contentStatsPokemon.innerHTML = "";
         imagePokemons.style.borderRadius = '10%'
         imagePokemons.src = "https://c.tenor.com/ObbsyW_iyosAAAAC/pokemon-missing.gif"
-        pokemonName.innerHTML = "Not found"
+        namePokemon.textContent = "Not found"
     }
 }
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeDex</title>
+    <title>Pokedex</title>
     <link rel="stylesheet" href="./css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +18,11 @@
 
 <body>
     <header>
-       <img src="./assets/logo-pokemon.png" alt="" height="200rem">
+        <img src="./assets/logo-pokemon.png" alt="Ilustration" height="200px">
 
         <form id="content-search">
-            <input type="text" placeholder="Procurar Pokemon" id="input" autocomplete="off">
-            <button id="search">
+            <input type="text" placeholder="Search Pokemon" id="input-pokemon" autocomplete="off">
+            <button id="search-pokemon">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pokeball" width="30"
                     height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
                     stroke-linecap="round" stroke-linejoin="round">
@@ -31,65 +31,35 @@
                     <circle cx="12" cy="12" r="3" />
                     <path d="M3 12h6m6 0h6" />
                 </svg>
-                Buscar
+                Search
             </button>
         </form>
     </header>
 
-    <main id="container">
-        <div class="card-pokemons">
-            <h1 class="name"></h1>
-            <button id="next">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="44"
-                    height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <polyline points="9 6 15 12 9 18" />
-                </svg>
-            </button>
+    <main id="container-pokemon">
+        <h1 class="name-pokemon"></h1>
+        <img src="" alt="" class="image-pokemons">
+        <h2></h2>
+        <button id="next-pokemon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="44"
+                height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <polyline points="9 6 15 12 9 18" />
+            </svg>
+        </button>
 
-            <button id="prev">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="44"
-                    height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <polyline points="15 6 9 12 15 18" />
-                </svg>
-            </button>
+        <button id="prev-pokemon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="44"
+                height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <polyline points="15 6 9 12 15 18" />
+            </svg>
+        </button>
 
-            <img src="" alt="" class="pokemons">
-
-            <span id="stats-pokemons" style="margin-top: 30px;">
-                <p>ID :</p>
-                <h2 class="id" style="font-weight: 500;"></h2>
-            </span>
-            <br>
-
-            <span id="stats-pokemons" style="background-color: #cc4434;">
-                <p>HP :</p>
-                <h2 class="hp" style="font-weight: 500"></h2>
-            </span>
-            <br>
-
-            <span id="stats-pokemons" style="background: #4a5ac0;">
-                <p>Exp :</p>
-                <h2 class="xp" style="font-weight: 500;"></h2>
-            </span>
-            <br>
-            <span id="stats-pokemons" style="background-color: #609400;">
-                <p>Height :</p>
-                <h2 class="height" style="font-weight: 500;"></h2>
-            </span>
-            <br>
-            <span id="stats-pokemons" style="background-color: #84c024;">
-                <p>Weight :</p>
-                <h2 class="weight" style="font-weight: 500;"></h2>
-            </span>
-            <br>
-            <br>
-            
+        <div class="content-stats">
         </div>
-
     </main>
 
     <script src="./js/main.js"></script>
