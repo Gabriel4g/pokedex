@@ -19,7 +19,7 @@ let nextAndPrev = 1
 
 async function renderPokemons(pokemon) {
     const data = await getPokemons(pokemon);
-
+    
     if(data) {
         contentStatsPokemon.innerHTML = "";
         namePokemon.textContent = data.name.toUpperCase();

@@ -6,7 +6,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     background-image: url(../assets/background.jpg);
     background-color: rgba(0, 0, 0, 0.6);
 	background-blend-mode: color;
@@ -14,7 +14,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 4rem 0;
+    padding: 4rem 4rem;
 }
 
 img {
@@ -22,7 +22,7 @@ img {
 }
 
 header {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,8 +39,7 @@ form#content-search > input#input-pokemon {
     font-size: 1.7rem;
     padding-left: 14px;
     width: 90%;
-    max-width: 30rem;
-    min-width: 30rem;
+    max-width: 40rem;
     border: none;
     border-left: 3px solid #55bb3b;
     outline: none;
@@ -55,9 +54,8 @@ form#content-search > button#search-pokemon {
     height: 4.5rem;
     font-size: 2rem;
     border: none;
-    width: 50%;
+    width: inherit;
     max-width: 20rem;
-    min-width: 20rem;
     background: #55bb3b;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
@@ -66,8 +64,8 @@ form#content-search > button#search-pokemon {
 }
 
 main#container-pokemon {
-    width: 80%;
-    max-width: 50rem;
+    width: 100%;
+    max-width: 60rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,15 +107,27 @@ main#container-pokemon img {
 }
 
 main#container-pokemon .content-stats {
+    width: 80%;
     text-align: center;
     margin-top: 5rem;
 }
 
 .style-powers-pokemon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    padding: .8rem;
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+    background: linear-gradient(
+        #0a6dc4, #192663
+    );
+    border-radius: 10px;
+}
+
+.style-powers-pokemon:nth-child(even) {
+    background: linear-gradient(
+        #0a6dc4, #55bb3b   
+    );
 }
 
 @media (max-width: 768px) {
@@ -125,19 +135,16 @@ main#container-pokemon .content-stats {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        align-items: center;
         width: 100%;
-        max-width: 90rem;
     }
 
     form#content-search > button#search-pokemon, 
     form#content-search > input#input-pokemon {
         width: 100%;
-        max-width: 70rem;
-        min-width: 0;
+        max-width: 100rem;
     }
 
     main#container-pokemon{
-        max-width: 70rem;
+        max-width: 80rem;
     }
 }
